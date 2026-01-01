@@ -1,0 +1,530 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Art Zaryana Gallery - Contemporary Art Collection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style-modern.css" />
+    <style>
+      /* Critical styles for animations - these override/supplement your CSS */
+      body {
+        opacity: 0;
+        transition: opacity 0.6s ease-in;
+      }
+
+      body.loaded {
+        opacity: 1;
+      }
+
+      #stars-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      nav {
+        transform: translateY(-100%);
+        transition: transform 0.5s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      nav.visible {
+        transform: translateY(0);
+      }
+
+      nav.scrolled {
+        background-color: rgba(0, 0, 0, 0.98) !important;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-content {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+
+      .hero-content.animate {
+        animation: fadeInUp 1.2s ease forwards;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .scroll-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: all 0.8s ease;
+      }
+
+      .scroll-reveal.revealed {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-reveal-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: all 0.8s ease;
+      }
+
+      .scroll-reveal-left.revealed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .scroll-reveal-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: all 0.8s ease;
+      }
+
+      .scroll-reveal-right.revealed {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      header {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-title {
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          filter: drop-shadow(0 0 20px rgba(102, 126, 234, 0.3));
+        }
+        to {
+          filter: drop-shadow(0 0 40px rgba(118, 75, 162, 0.5));
+        }
+      }
+
+      .cta-button {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-button::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .cta-button:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .submit-btn {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .submit-btn::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .submit-btn:hover::before {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="stars-canvas"></canvas>
+
+    <nav>
+      <div class="site-name">Art Zaryana</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" />
+      <label for="hamburger-toggle" class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </nav>
+
+    <div class="off-screen-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <header id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">Art Zaryana</h1>
+        <p class="hero-subtitle">Contemporary Art Collection</p>
+        <p class="hero-description">Exploring the boundaries of color, form, and emotion</p>
+        <a href="#gallery" class="cta-button">Explore Gallery</a>
+      </div>
+      <div class="hero-overlay"></div>
+    </header>
+
+    <main class="gallery-container">
+      <section id="gallery" class="gallery-section">
+        <div class="section-header scroll-reveal">
+          <h2>Featured Artworks</h2>
+          <p>Discover unique pieces from the collection</p>
+        </div>
+
+        <div class="art-grid">
+          <a href="artwork1.html" class="art-card scroll-reveal">
+            <div class="art-image-container">
+              <img src="Artpieces/M3G_4009_1.jpg" alt="Golden Way" class="art-image" />
+              <div class="art-overlay"><span class="view-details">View Details</span></div>
+            </div>
+            <div class="art-info">
+              <h3 class="art-name">Golden Way</h3>
+              <p class="art-description">blah bah lah</p>
+              <div class="art-footer">
+                <p class="art-price">$450</p>
+                <span class="art-status">Available</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="artwork2.html" class="art-card scroll-reveal">
+            <div class="art-image-container">
+              <img src="Artpieces/M3G_4045-EDIT (1).jpg" alt="Serene Landscape" class="art-image" />
+              <div class="art-overlay"><span class="view-details">View Details</span></div>
+            </div>
+            <div class="art-info">
+              <h3 class="art-name">Beautiful Art wow</h3>
+              <p class="art-description">blah blah blah</p>
+              <div class="art-footer">
+                <p class="art-price">$620</p>
+                <span class="art-status">Available</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="artwork3.html" class="art-card scroll-reveal">
+            <div class="art-image-container">
+              <img src="https://cdn.pixabay.com/photo/2023/11/05/14/49/ai-generated-8367180_1280.jpg" alt="Urban Rhythm" class="art-image" />
+              <div class="art-overlay"><span class="view-details">View Details</span></div>
+            </div>
+            <div class="art-info">
+              <h3 class="art-name">Beautiful Art wow</h3>
+              <p class="art-description">blah blah blah</p>
+              <div class="art-footer">
+                <p class="art-price">$580</p>
+                <span class="art-status">Available</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="artwork4.html" class="art-card scroll-reveal">
+            <div class="art-image-container">
+              <img src="https://cdn.pixabay.com/photo/2023/10/31/22/26/ai-generated-8355593_1280.png" alt="Floral Symphony" class="art-image" />
+              <div class="art-overlay"><span class="view-details">View Details</span></div>
+            </div>
+            <div class="art-info">
+              <h3 class="art-name">Beautiful Art wow</h3>
+              <p class="art-description">blah blah blah</p>
+              <div class="art-footer">
+                <p class="art-price">$520</p>
+                <span class="art-status">Available</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="artwork5.html" class="art-card scroll-reveal">
+            <div class="art-image-container">
+              <img src="https://cdn.pixabay.com/photo/2023/09/24/18/26/ai-generated-8273541_1280.png" alt="Coastal Dreams" class="art-image" />
+              <div class="art-overlay"><span class="view-details">View Details</span></div>
+            </div>
+            <div class="art-info">
+              <h3 class="art-name">Beautiful Art wow</h3>
+              <p class="art-description">blah blah blah</p>
+              <div class="art-footer">
+                <p class="art-price">$690</p>
+                <span class="art-status">Available</span>
+              </div>
+            </div>
+          </a>
+
+          <a href="artwork6.html" class="art-card scroll-reveal">
+            <div class="art-image-container">
+              <img src="https://cdn.pixabay.com/photo/2023/11/21/20/10/ai-generated-8403728_1280.png" alt="Portrait of Silence" class="art-image" />
+              <div class="art-overlay"><span class="view-details">View Details</span></div>
+            </div>
+            <div class="art-info">
+              <h3 class="art-name">Beautiful Art wow</h3>
+              <p class="art-description">blah blah blah</p>
+              <div class="art-footer">
+                <p class="art-price">$750</p>
+                <span class="art-status">Available</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="about-content">
+          <div class="about-text scroll-reveal-left">
+            <h2>About me</h2>
+            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer semper, nibh eu vestibulum imperdiet, augue</p>
+            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer semper, nibh eu vestibulum imperdiet, augue</p>
+            <p>lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Integer semper, nibh eu vestibulum imperdiet, augue</p>
+            <p>goo gu gaga</p>
+          </div>
+          <div class="about-image scroll-reveal-right">
+            <img src="https://placehold.co/600x800/1a1a1a/a78bfa?text=Artist+Portrait" alt="Artist Portrait" />
+            <div class="about-stats">
+              <div class="stat">
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">100+</span>
+                <span class="stat-label">Works Created</span>
+              </div>
+              <div class="stat">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Love for Art</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <div class="contact-container">
+          <div class="contact-info scroll-reveal-left">
+            <h2>Get in Touch</h2>
+            <p>Have a question about an artwork or interested in a commission? I'd love to hear from you.</p>
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="contact-icon">📧</span>
+                <div>
+                  <h3>Email</h3>
+                  <p>oleseattle@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form scroll-reveal-right">
+            <form id="contactForm">
+              <h3>Send a Message</h3>
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" name="contactName" id="contactName" required />
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" name="contactEmail" id="contactEmail" required />
+              </div>
+              <div class="form-group">
+                <textarea placeholder="Your Message" name="contactMessage" id="contactMessage" rows="3" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Art Zaryana</h3>
+          <p>Contemporary art that speaks to the soul</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Follow</h4>
+          <p>Stay connected for new works and exhibitions</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Art Zaryana. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      emailjs.init("0NSJYK5U3mp5S7SeV");
+
+      $(document).ready(function() {
+        // Smooth page load
+        $('body').addClass('loaded');
+        setTimeout(() => $('nav').addClass('visible'), 300);
+        setTimeout(() => $('.hero-content').addClass('animate'), 500);
+
+        // Twinkling Stars Animation
+        const canvas = $('#stars-canvas')[0];
+        const ctx = canvas.getContext('2d');
+        let stars = [];
+
+        function resizeCanvas() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        }
+
+        function createStars() {
+          stars = [];
+          for (let i = 0; i < 200; i++) {
+            stars.push({
+              x: Math.random() * canvas.width,
+              y: Math.random() * canvas.height,
+              radius: Math.random() * 1.5 + 0.5,
+              opacity: Math.random(),
+              twinkleSpeed: Math.random() * 0.02 + 0.01,
+              growing: Math.random() > 0.5
+            });
+          }
+        }
+
+        function drawStars() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          stars.forEach(s => {
+            ctx.beginPath();
+            ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(167, 139, 250, ${s.opacity})`;
+            ctx.fill();
+            if (s.growing) {
+              s.opacity += s.twinkleSpeed;
+              if (s.opacity >= 1) s.growing = false;
+            } else {
+              s.opacity -= s.twinkleSpeed;
+              if (s.opacity <= 0.1) s.growing = true;
+            }
+          });
+          requestAnimationFrame(drawStars);
+        }
+
+        resizeCanvas();
+        createStars();
+        drawStars();
+        $(window).resize(() => { resizeCanvas(); createStars(); });
+
+        // Scroll Reveal Animation
+        function revealOnScroll() {
+          $('.scroll-reveal, .scroll-reveal-left, .scroll-reveal-right').each(function() {
+            const elementTop = $(this).offset().top;
+            const elementBottom = elementTop + $(this).outerHeight();
+            const viewportTop = $(window).scrollTop();
+            const viewportBottom = viewportTop + $(window).height();
+            if (elementBottom > viewportTop && elementTop < viewportBottom) {
+              $(this).addClass('revealed');
+            }
+          });
+        }
+
+        $(window).on('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Navigation scroll effect
+        $(window).on('scroll', function() {
+          $('nav').toggleClass('scrolled', $(window).scrollTop() > 100);
+        });
+
+        // Hamburger menu
+        $('#hamburger-toggle').on('change', () => $('.off-screen-menu').toggleClass('active'));
+
+        // Smooth scrolling for navigation links
+        $('a[href^="#"]').on('click', function(e) {
+          e.preventDefault();
+          const target = $(this.getAttribute('href'));
+          if (target.length) {
+            $('html, body').stop().animate({ scrollTop: target.offset().top - 70 }, 1000, 'swing');
+            $('#hamburger-toggle').prop('checked', false);
+            $('.off-screen-menu').removeClass('active');
+          }
+        });
+
+        // Art card stagger animation
+        $('.art-card').each((i, el) => $(el).css('transition-delay', (i * 0.1) + 's'));
+
+        // Stats counter animation
+        function animateStats() {
+          $('.stat-number').each(function() {
+            const $this = $(this);
+            const countTo = $this.text();
+            const numericValue = parseInt(countTo.replace(/\D/g, ''));
+            if (numericValue && !$this.hasClass('counted')) {
+              $this.addClass('counted');
+              $({ countNum: 0 }).animate({ countNum: numericValue }, {
+                duration: 2000,
+                easing: 'swing',
+                step: function() {
+                  $this.text(Math.floor(this.countNum) + (countTo.includes('+') ? '+' : countTo.includes('%') ? '%' : ''));
+                },
+                complete: () => $this.text(countTo)
+              });
+            }
+          });
+        }
+
+        $(window).on('scroll', function() {
+          const statsTop = $('.about-stats').offset().top;
+          const viewportBottom = $(window).scrollTop() + $(window).height();
+          if (viewportBottom > statsTop && !$('.stat-number').hasClass('counted')) {
+            animateStats();
+          }
+        });
+
+        // Form submission
+        $('#contactForm').on('submit', function(e) {
+          e.preventDefault();
+          const $btn = $('.submit-btn');
+          $btn.text('Sending...').prop('disabled', true);
+          emailjs.sendForm('service_c40osld', 'template_v2deo3f', this).then(
+            () => {
+              $btn.text('Message Sent!').css('background', 'linear-gradient(135deg, #10b981 0%, #059669 100%)');
+              $('#contactForm')[0].reset();
+              setTimeout(() => $btn.text('Send Message').css('background', '').prop('disabled', false), 3000);
+            },
+            (err) => {
+              console.error('Failed:', err);
+              $btn.text('Failed - Try Again').prop('disabled', false);
+              setTimeout(() => $btn.text('Send Message'), 3000);
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

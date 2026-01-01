@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Benefits and Harms</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+
+<body class="BensHarmsBody">
+      <div class="off-screen-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="CoffeeHistory.html">Coffee History</a></li>
+          <li><a href="BensandHarms.html">Benefits vs Harms</a></li>
+          <li><a href="Trivia.html">Coffee Trivia</a></li>
+          <li><a href="Recipe.html">Cool Recipes</a></li>
+        </ul>
+      </div>
+    
+      <nav>
+        <div class="site-name">The Coffee Lair</div>
+        <!-- Regular Navigation Menu -->
+        <ul class="navul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="CoffeeHistory.html">Coffee History</a></li>
+          <li><a href="BensandHarms.html">Benefits vs Harms</a></li>
+          <li><a href="Trivia.html">Coffee Trivia</a></li>
+          <li><a href="Recipe.html">Cool Recipes</a></li>
+        </ul>
+      
+        <!-- Hamburger Menu -->
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+        <label for="hamburger-toggle" class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </label>
+      </nav>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+const offScreenMenuArray = document.getElementsByClassName('off-screen-menu');
+const hamMenuArray = document.getElementsByClassName('hamburger-toggle');
+const hamMenu = hamMenuArray[0];
+const offScreenMenu  = offScreenMenuArray[0];
+
+  hamMenu.addEventListener('click', ()=> {
+  hamMenu.classList.toggle('active');
+  offScreenMenu.classList.toggle('active');
+  
+})
+ });
+      </script>
+      <main>
+        <div class="header-block">
+            <h1>Benefits vs Harms of Coffee</h1>
+            <div class = "Nutrition-Table">
+            <h2>Nutrition Facts</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nutrient</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Calories</td>
+                  <td>1 kcal</td>
+                </tr>
+                <tr>
+                  <td>Total Fat</td>
+                  <td>0 g</td>
+                </tr>
+                <tr>
+                  <td>Cholesterol</td>
+                  <td>0 mg</td>
+                </tr>
+                <tr>
+                  <td>Sodium</td>
+                  <td>0 mg</td>
+                </tr>
+                <tr>
+                  <td>Total Carbohydrates</td>
+                  <td>0 g</td>
+                </tr>
+                <tr>
+                  <td>Fiber</td>
+                  <td>0 g</td>
+                </tr>
+                <tr>
+                  <td>Sugar</td>
+                  <td>Varies (can be significant)</td>
+                </tr>
+                <tr>
+                  <td>Caffeine</td>
+                  <td>63 mg</td>
+                </tr>
+              </tbody>
+              <caption>
+                Based on a standard, single shot of esspresso. <a href="https://fdc.nal.usda.gov/food-details/171890/nutrients">Source</a>
+              </caption>
+            </table>
+          </div>
+          </div>
+        <div class="container2">
+            <div class="column left-column">
+              <h2>Benefits of Coffee</h2>
+              <p>Coffee is more than just a morning pick-me-up; it offers a wide range of health benefits when consumed in moderation. One of its most well-known effects is its ability to <strong>boost energy and mental alertness</strong>. Caffeine, the primary active compound in coffee, blocks adenosine, a neurotransmitter that promotes sleep, leading to improved focus, concentration, and cognitive performance. This makes coffee a popular choice for enhancing productivity and combating fatigue.</p>
+              <br>
+              <p>In addition to its cognitive benefits, coffee is a rich source of <strong>antioxidants</strong>, such as chlorogenic acid and polyphenols. These compounds help combat oxidative stress and reduce inflammation in the body, which are key factors in the development of chronic diseases. Studies have shown that regular coffee consumption is associated with a reduced risk of <strong>type 2 diabetes, Parkinson's disease, and certain types of cancer</strong>, including liver and colorectal cancer. The antioxidants in coffee may also protect against neurodegenerative diseases like Alzheimer's by reducing inflammation in the brain.</p>
+              <br>
+              <p>Coffee has also been linked to <strong>improved physical performance</strong>. Caffeine stimulates the nervous system, increasing adrenaline levels and preparing the body for physical exertion. This can enhance endurance, strength, and overall athletic performance. Athletes often use coffee as a natural performance enhancer before workouts or competitions.</p>
+              <br>
+              <p>Another significant benefit of coffee is its positive impact on <strong>liver health</strong>. Regular coffee consumption has been associated with a lower risk of liver diseases, such as cirrhosis, liver fibrosis, and liver cancer. Coffee may also improve liver enzyme levels, reducing the risk of liver damage. This protective effect is thought to be due to the combination of antioxidants and other bioactive compounds in coffee.</p>
+              <br>
+              <p>Coffee may also have mental health benefits. Some studies suggest that moderate coffee consumption is associated with a reduced risk of <strong>depression and suicide</strong>. The mood-enhancing effects of caffeine, combined with its ability to increase the production of neurotransmitters like dopamine and serotonin, may contribute to these benefits. Additionally, coffee has been linked to a lower risk of stroke and heart disease when consumed in moderation, likely due to its anti-inflammatory and antioxidant properties.</p>
+              <br>
+              <p>Finally, coffee is a social and cultural beverage that brings people together. The ritual of drinking coffee can provide a sense of comfort and community, contributing to overall well-being. When consumed in moderation, coffee can be a valuable addition to a healthy lifestyle.</p>
+            <br>
+            <strong>Sources:</strong>
+            <br>
+            <a href="https://www.hsph.harvard.edu/nutritionsource/food-features/coffee/" target="_blank">Coffee and Health</a><br>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5696634/" target="_blank">National Institutes of Health</a><br>
+          <a href="https://www.mayoclinic.org/diseases-conditions/liver-problems/expert-answers/coffee-and-liver-health/faq-20058442" target="_blank">Mayo Clinic</a><br>
+            <a href="https://www.heart.org/en/news/2018/06/15/is-coffee-good-for-you-or-not" target="_blank">American Heart Assocation</a>
+          </div>
+            <div class="column right-column">
+              <h2>Harms of Coffee</h2>
+              <p>Coffee, while beloved by many, can have several negative effects, particularly when consumed in excess or by individuals who are sensitive to its components. One of the most significant concerns is its <strong>caffeine content</strong>, which can lead to <strong>anxiety, restlessness, and insomnia</strong>. For people who are highly sensitive to caffeine, even a small amount can disrupt sleep patterns, leading to fatigue and reduced productivity during the day. Chronic sleep disruption can also contribute to long-term health issues, such as weakened immunity and an increased risk of chronic diseases like hypertension and diabetes.</p>
+              <br>
+    <p>Another potential harm of coffee is its impact on <strong>cardiovascular health</strong>. High caffeine intake can cause <strong>elevated heart rate, palpitations, and increased blood pressure</strong>, which may be particularly dangerous for individuals with pre-existing heart conditions. While moderate coffee consumption is generally safe for most people, excessive intake can strain the cardiovascular system, especially in those who are not accustomed to caffeine.</p>
+    <br>
+    <p>Coffee's <strong>acidity</strong> can also pose problems for digestive health. It can irritate the stomach lining, leading to <strong>heartburn, acid reflux, or gastritis</strong>. For individuals with conditions like irritable bowel syndrome (IBS) or gastroesophageal reflux disease (GERD), coffee may exacerbate symptoms. Additionally, coffee acts as a <strong>diuretic</strong>, which can lead to dehydration if not balanced with adequate water intake. Over time, this can strain the kidneys and contribute to urinary issues.</p>
+    <br>
+    <p>For pregnant women, coffee consumption is a topic of concern. High caffeine intake during pregnancy has been linked to <strong>low birth weight, preterm birth, and an increased risk of miscarriage</strong>. Health organizations like the World Health Organization (WHO) recommend limiting caffeine intake during pregnancy to reduce these risks. Furthermore, coffee can interfere with the absorption of essential nutrients, such as <strong>iron and calcium</strong>, potentially leading to deficiencies, especially in individuals with poor dietary habits.</p>
+    <br>
+    <p>Lastly, coffee can be <strong>habit-forming</strong>, and regular consumers may experience withdrawal symptoms when they reduce or stop their intake. Common withdrawal symptoms include <strong>headaches, fatigue, irritability, and difficulty concentrating</strong>. These symptoms can make it challenging for individuals to cut back on coffee, even when they recognize its negative effects on their health.</p>
+ <br>
+ <strong>Sources:</strong> 
+ <br> 
+    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3777290/" target="_blank">National Institutes of Health</a><br>
+      <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/expert-answers/caffeine/faq-20058459" target="_blank">Mayo Clinic</a><br>
+      <a href="https://americanpregnancy.org/healthy-pregnancy/pregnancy-health-wellness/caffeine-during-pregnancy/" target="_blank">American Pregancy Association</a>
+            </div>
+          </div>
+          <div class="bottomblock">
+            <h2>Conclusion</h2>
+    <p>Coffee is a complex beverage with both potential harms and benefits. While excessive consumption can lead to negative effects like anxiety, digestive issues, and cardiovascular strain, moderate intake can provide significant health benefits, including improved mental and physical performance, reduced risk of chronic diseases, and enhanced antioxidant intake. As with many things, balance and individual tolerance are key to enjoying coffee safely and healthily. Always consider your personal health conditions and consult a healthcare professional if you have concerns about your coffee consumption.</p>
+          </div>
+      </main>
+      
+  <footer class="nomargin-footer">
+    <p>&copy; 2025 The Coffee Lair. All rights reserved. <i>By <strong>Bogdan Trigubov</strong></i></p>
+  </footer>
+  <button class="back-to-top2" title="Go to top">Top</button>
+  <script src="JavaScript/topbuttonbens.js"></script>
+<script>
+    //  $(document).ready(function() {
+    // $(".header-block").slideDown(3000); 
+    // });
+    // $(document).ready(function() {
+    // $(".column").slideDown(3000); 
+    // });
+    // $(document).ready(function() {
+    // $(".bottom-block").slideDown(3000); 
+    // });
+</script>
+</body>
+</html>

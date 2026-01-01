@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+
+    <header id="TriviaHeader">
+        <h1>Must-Try Coffee Recipes</h1>
+      </header>
+      <div class="off-screen-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="CoffeeHistory.html">Coffee History</a></li>
+          <li><a href="BensandHarms.html">Benefits vs Harms</a></li>
+          <li><a href="Trivia.html">Coffee Trivia</a></li>
+          <li><a href="Recipe.html">Cool Recipes</a></li>
+        </ul>
+      </div>
+    
+      <nav>
+        <div class="site-name">The Coffee Lair</div>
+        <!-- Regular Navigation Menu -->
+        <ul class="navul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="CoffeeHistory.html">Coffee History</a></li>
+          <li><a href="BensandHarms.html">Benefits vs Harms</a></li>
+          <li><a href="Trivia.html">Coffee Trivia</a></li>
+          <li><a href="Recipe.html">Cool Recipes</a></li>
+        </ul>
+      
+        <!-- Hamburger Menu -->
+        <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+        <label for="hamburger-toggle" class="hamburger">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
+        </label>
+      </nav>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+const offScreenMenuArray = document.getElementsByClassName('off-screen-menu');
+const hamMenuArray = document.getElementsByClassName('hamburger-toggle');
+const hamMenu = hamMenuArray[0];
+const offScreenMenu  = offScreenMenuArray[0];
+
+  hamMenu.addEventListener('click', ()=> {
+  hamMenu.classList.toggle('active');
+  offScreenMenu.classList.toggle('active');
+  
+})
+ });
+      </script>
+      <main>
+        <div class="recipe-grid">
+            <!-- Dalgona Coffee -->
+            <div class="recipe-card">
+              <div class="recipe-front1">
+                <h2>Dalgona Coffee</h2>
+              </div>
+              <div class="recipe-back">
+                <p>A unique, creamy, whipped coffee</p>
+                <h3>Ingredients:</h3>
+                <ul>
+                  <li>2 tbsp instant coffee</li>
+                  <li>2 tbsp sugar</li>
+                  <li>2 tbsp hot water</li>
+                  <li>1 cup milk (hot or cold)</li>
+                </ul>
+                <h3>Instructions:</h3>
+                <ol>
+                  <li>Mix coffee, sugar, and hot water.</li>
+                  <li>Whip until creamy</li>
+                  <li>Pour milk into a glass.</li>
+                  <li>Spoon the whipped coffee on top.</li>
+                  <li>Stir before drinking.</li>
+                </ol>
+                <a href="https://jessicainthekitchen.com/how-to-make-whipped-coffee-dalgona-coffee-tips/" target="_blank">More Details</a> <!--note: target= "_blank" opens the link on new tab-->
+              </div>
+            </div>
+            <!-- Bulletproof Coffee -->
+            <div class="recipe-card">
+                <div class="recipe-front2">
+                  <h2>Bulletproof Coffee</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>A tasty, buttery delight</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>1 cup black coffee</li>
+                    <li>2 tbsp butter</li>
+                    <li>1 tsp MCT oil</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Mix coffee, butter, and MCT oil.</li>
+                    <li>Put into a blender.</li>
+                    <li>Blend for 30s until smooth.</li>
+                  </ol>
+                  <a href="https://www.thespruceeats.com/bulletproof-coffee-recipe-5218988" target="_blank">More Details</a>
+                </div>
+              </div>
+               <!-- Cappuccino -->
+              <div class="recipe-card">
+                <div class="recipe-front3">
+                  <h2>Cappuccino</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>The tradional Italian classic</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>2 tbsp dark roast coffee</li>
+                    <li>4oz water</li>
+                    <li>4oz milk</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Prepare double shot of espresso.</li>
+                    <li>Foam the milk to 2x its size.</li>
+                    <li>Top the espresso with the foam.</li>
+                  </ol>
+                  <a href="https://www.thespruceeats.com/how-to-make-cappuccinos-766116" target="_blank">More Details</a>
+                </div>
+              </div>
+              <!-- Irish Coffee -->
+              <div class="recipe-card">
+                <div class="recipe-front4">
+                  <h2>Irish Coffee</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>The harmonious coupling of coffee and whiskey</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>6 oz hot coffee</li>
+                    <li>1 tsp sugar</li>
+                    <li>1 tsp brown sugar</li>
+                    <li>1.5 oz Irish whiskey</li>
+                    <li>Fresh whipped cream</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Fill mug with coffee.</li>
+                    <li>Add sugars and whiskey.</li>
+                    <li>Mix it.</li>
+                    <li>Top with whipped cream</li>
+                  </ol>
+                  <a href="https://www.thekitchn.com/how-to-make-irish-coffee-167678" target="_blank">More Details</a>
+                </div>
+              </div>
+                  <!-- Mocha Coffee -->
+              <div class="recipe-card">
+                <div class="recipe-front5">
+                  <h2>Mocha</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>Coupling the worlds of coffee and chocolate</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>1-2 tbsp sugar</li>
+                    <li>2 tbsp cocoa powder</li>
+                    <li>2 tbsp water</li>
+                    <li>1 cup hot coffee</li>
+                    <li>0.25 cup milk</li>
+                    <li>1 tbsp heavy cream</li>
+                    <li>Whipped cream</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Brew hot coffee</li>
+                    <li>Mix and heat the water, cocoa and sugar</li>
+                    <li>Stir in coffee and milk</li>
+                    <li>Heat until steaming</li>
+                    <li>Top with whipped cream</li>
+                  </ol>
+                  <a href="https://bakingmischief.com/homemade-mocha/" target="_blank">More Details</a>
+                </div>
+              </div>
+              <!--Affogato-->
+              <div class="recipe-card">
+                <div class="recipe-front6">
+                  <h2>Affogato</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>"Drowning" ice cream in coffee</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>1 shot esspresso</li>
+                    <li>2 scoops vanilla gelato</li>
+                    <li>Shaved dark chocolate (optional)</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Prepare esspresso</li>
+                    <li>Add ice cream into a glass</li>
+                    <li>Pour esspresso over glass</li>
+                    <li>Top with the shaved dark chocolate</li>
+                  </ol>
+                  <a href="https://www.thekitchn.com/affogato-recipe-23058717" target="_blank">More Details</a>
+                </div>
+              </div>
+              <!--Cold Brew Coffee-->
+              <div class="recipe-card">
+                <div class="recipe-front7">
+                  <h2>Cold Brew</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>It's coffee, but iced and refreshing</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>1 cup whole coffee beans</li>
+                    <li>4 cups water</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Grind coffee beans</li>
+                    <li>Combine the grinded beans and water</li>
+                    <li>Steep overnight</li>
+                    <li>Strain the coffee</li>
+                    <li>Serve with ice and milk</li>
+                  </ol>
+                  <a href="https://www.simplyrecipes.com/recipes/how_to_make_cold_brew_coffee/" target="_blank">More Details</a>
+                </div>
+              </div>
+              <!--Mazagran Coffee-->
+              <div class="recipe-card">
+                <div class="recipe-front8">
+                  <h2>Mazagran</h2>
+                </div>
+                <div class="recipe-back">
+                    <p>An exotic coffee lemonade from Algeria</p>
+                  <h3>Ingredients:</h3>
+                  <ul>
+                    <li>2 shots esspresso</li>
+                    <li>2 tbsp brown sugar</li>
+                    <li>4-5tbsp lemon joice</li>
+                    <li>Crushed ice</li>
+                    <li>Lemon slices</li>
+                  </ul>
+                  <h3>Instructions:</h3>
+                  <ol>
+                    <li>Put everything into a container</li>
+                    <li>Mix and shake vigorously</li>
+                    <li>Serve with lemon slices</li>
+                  </ol>
+                  <a href="https://perfectdailygrind.com/2023/02/what-is-mazagran-coffee/" target="_blank">More Details</a>
+                </div>
+              </div>
+          
+            <!-- also add, Mocha, Affogato, Cold Brew, Mazagran-->
+          </div>
+      </main>
+      
+  <footer> 
+    <p>&copy; 2025 The Coffee Lair. All rights reserved. <i>By <strong>Bogdan Trigubov</strong></i></p>
+  </footer>
+  <button class="back-to-top4" title="Go to top">Top</button>
+  <script src="JavaScript/topbuttonrec.js"></script>
+  <script>
+         $(document).ready(function() {
+    $(".recipe-card").slideDown(2000); 
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "the-4th-dimension": {
+    "name": "The 4th Dimension",
+    "description": "These abstract paintings feature metallic colors and volume potentially capturing what the 4th dimension might be.",
+    "filename": "the-4th-dimension.html",
+    "backgroundImage": "collection_bgs/stole-3419985_1920.jpg",
+    "backgroundOverlay": "rgba(64, 0, 109, 0.8)",
+    "artworks": []
+  },
+  "winter-realm": {
+    "name": "The Winter Realm",
+    "description": "Experience the magical soul warming coziness of the cold winter",
+    "filename": "winter-realm.html",
+    "backgroundImage": "collection_bgs/winter-realm.png",
+    "backgroundOverlay": "rgba(64, 0, 109, 0.8)",
+    "artworks": [
+      {
+        "filename": "starryvillage.html",
+        "title": "Starry Village",
+        "description": "A snowy christmas village at night",
+        "price": "$90",
+        "availability": "Available",
+        "image": "Artpieces/starry_village.JPG"
+      },
+      {
+        "filename": "aurora_town.html",
+        "title": "Aurora Town",
+        "description": "Northern dreams come true",
+        "price": "$120",
+        "availability": "Available",
+        "image": "Artpieces/aurora_town.JPG"
+      },
+      {
+        "filename": "behind_the_mountains.html",
+        "title": "Behind the Mountains",
+        "description": "Snowy village under the moonlit sky.",
+        "price": "$120",
+        "availability": "Available",
+        "image": "Artpieces/behind_the_mountains.JPG"
+      }
+    ]
+  },
+  "fish-party": {
+    "name": "Fish Party",
+    "description": "A bright collection of fish to bring the spirits up in any room",
+    "filename": "fish-party.html",
+    "backgroundImage": "collection_bgs/underwater.jpg",
+    "backgroundOverlay": "rgba(64, 0, 109, 0.8)",
+    "artworks": [
+      {
+        "filename": "fish-surprised.html",
+        "title": "Surprised",
+        "description": "A fish caught red-handed",
+        "price": "NA",
+        "availability": "Sold",
+        "image": "Artpieces/fish_surprised.JPG"
+      },
+      {
+        "filename": "sardines.html",
+        "title": "Escaping the Can",
+        "description": "Twin sardines escaping the can",
+        "price": "NA",
+        "availability": "Sold",
+        "image": "Artpieces/fish_sardines.JPG"
+      },
+      {
+        "filename": "fish_king.html",
+        "title": "Fish King",
+        "description": "Bright fish you shouldn't mess with",
+        "price": "NA",
+        "availability": "Sold",
+        "image": "Artpieces/fish_king.JPG"
+      },
+      {
+        "filename": "fish-mural.html",
+        "title": "The princess",
+        "description": "The beauty all fish seek..",
+        "price": "NA",
+        "availability": "Sold",
+        "image": "Artpieces/fish_mural.JPG"
+      },
+      {
+        "filename": "three-musketeers.html",
+        "title": "Three Musketeers",
+        "description": "Three goldfish watching the sea",
+        "price": "NA",
+        "availability": "Sold",
+        "image": "Artpieces/fish_goldfish.JPG"
+      }
+    ]
+  }
+}

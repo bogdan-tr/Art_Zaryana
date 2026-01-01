@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee History</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+    <body class="history-body">
+  
+        <header>
+          <h1>History of Coffee</h1>
+        </header>
+        <div class="off-screen-menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="CoffeeHistory.html">Coffee History</a></li>
+            <li><a href="BensandHarms.html">Benefits vs Harms</a></li>
+            <li><a href="Trivia.html">Coffee Trivia</a></li>
+            <li><a href="Recipe.html">Cool Recipes</a></li>
+          </ul>
+        </div>
+      
+        <nav>
+          <div class="site-name">The Coffee Lair</div>
+          <!-- Regular Navigation Menu -->
+          <ul class="navul">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="CoffeeHistory.html">Coffee History</a></li>
+            <li><a href="BensandHarms.html">Benefits vs Harms</a></li>
+            <li><a href="Trivia.html">Coffee Trivia</a></li>
+            <li><a href="Recipe.html">Cool Recipes</a></li>
+          </ul>
+        
+          <!-- Hamburger Menu -->
+          <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+          <label for="hamburger-toggle" class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </label>
+        </nav>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+  const offScreenMenuArray = document.getElementsByClassName('off-screen-menu');
+  const hamMenuArray = document.getElementsByClassName('hamburger-toggle');
+  const hamMenu = hamMenuArray[0];
+  const offScreenMenu  = offScreenMenuArray[0];
+  
+    hamMenu.addEventListener('click', ()=> {
+    hamMenu.classList.toggle('active');
+    offScreenMenu.classList.toggle('active');
+    
+  })
+   });
+        </script>
+        <main>
+          <div class = "whitebackgroundhistory">
+            <div class = "history-block legendary">
+            <h2>The legend</h2>
+<p>Around 800AD in the land of Ethiopia, a goat herder named Kaldi found his goats acting very strangely. They were so pumped up, happy and energized around specific shrub-like trees. It turned out that they were eating mysterious berries from them, and he decided to try them out as well. The berries made him energized and alert, so he decided to share his discovery with the monks. The monks tossed the berries into a fire, claiming their magical effect comes from the devil. However, the appentizing scent made them regret their decision. The monks took the roasted berries and put them in cup with hot water. This new drink helped them stay alert and focused during their nightly devotional prayers, so they approved of it. </p>
+<a href="https://www.nescafe.com/in/coffee-culture/knowledge/coffee-history#:~:text=As%20it's%20thought%20that%20coffee,Egypt%2C%20Syria%2C%20and%20Turkey.">Source</a>
+</div>
+<div class = "history-block reality">
+  <h2>The likely reality</h2>
+<p>Although the legend sounds beautiful, it is likely just that - a legend. The likely history, however, isn't less boring. It is agreed that in the heart of East Africa, tribes would crush coffee cherries, blending them into a rich paste with animal fat. Shaped into small, potent balls, this mixture was believed to fuel warriors with the energy they needed for battle. By around 1000 AD, Ethiopians had crafted a unique wine from coffee berries, fermenting the dried beans in water to create a spirited brew. Meanwhile, on the Arabian Peninsula, where coffee grew wild, the 11th century saw the transformation of these humble beans into a steaming, invigorating drink. In those ancient days, coffee’s stimulating effects were often linked to a kind of divine euphoria, weaving an air of mystique around it. Cloaked in secrecy, coffee became a revered elixir, embraced by priests and healers alike, its reputation steeped in both reverence and wonder.</p>
+<a href="https://www.melitta.com/en/History-of-Coffee-629.html">Source</a>
+</div>
+<div class = "history-block cure">
+  <h2>Cofee is the cure</h2>
+<p>From headaches to heartaches, coffee was the ancient world’s answer to modern medicine. In 980 A.D., the great Arab scholar Avicenna hailed coffee for its medicinal prowess, claiming it could cure everything from earaches to eye strain to liver problems. His work, the <i>Canon of Medicine</i>, became a cornerstone of medical knowledge at the time. 
+  <br>
+  <br>
+  Meanwhile in 11th-century Mecca, the legend of Sheik Abdul Hasan Schadhedi added to coffee’s mystical status. When an unknown illness swept through the town, the Sheik brewed Ethiopian coffee in magic water from a sacred well, roasted and crushed the pits, and mixed them into a healing elixir. The townspeople were allegedly cured, and the Sheik’s reputation as a master physician soared. </p>
+  <a href="https://www.melitta.com/en/History-of-Coffee-629.html">Source</a>
+</div>
+<div class = "history-block venice">
+  <h2>Venice: The gateway for coffee into Europe</h2>
+<p>Coffee’s journey into Europe began in the 16th century, when Venetian traders, drawn by the exotic allure of the East, brought the first beans from the bustling ports of the Ottoman Empire. At first, Europeans were skeptical of this dark, bitter brew, calling it the “bitter invention of Satan” and sparking debates among clergy and scholars. But curiosity won out, and by the mid-1600s, coffee had found its way into the hands of the elite, who sipped it in lavish coffeehouses that sprang up in cities like Venice, London, and Paris. These coffeehouses quickly became hubs of intellectual exchange, where philosophers, writers, and revolutionaries gathered to debate ideas over steaming cups of the newfound drink. 
+  <br>
+  <br>
+  By the 18th century, coffee had woven itself into the fabric of European culture, transforming from a mysterious foreign import into a daily ritual for the masses. Its rise was unstoppable, fueled by tales of its energizing effects and the social allure of the coffeehouse, where the modern world was being brewed one cup at a time.</p>
+  <a href="https://coffeeexpressco.com/a-history-of-coffee-part-ii-coffee-in-europe/#:~:text=Coffee%20first%20came%20to%20Europe,more%20acceptable%20to%20European%20markets.">Source</a>
+</div>
+<div class = "history-block brazil">
+  <h2>Brazil: The rise of the coffee empire</h2>
+<p>
+  Legend has it that in 1727, a Brazilian diplomat named Francisco de Melo Palheta was sent to French Guiana to mediate a border dispute. While there, he became enamored with the coffee plants cultivated by the French. Unable to obtain seeds legally—as the French guarded their precious crops fiercely — Palheta allegedly used his charm to seduce the governor’s wife, who secretly gifted him a bouquet of coffee seedlings hidden among flowers. With these smuggled seeds, coffee found its way to Brazil, where it would soon transform the nation’s destiny.
+  
+  <br>
+  <br>
+
+  Brazil’s vast landscapes, fertile soil, and ideal climate proved to be the perfect environment for coffee cultivation. By the early 19th century, coffee plantations, or <i>fazendas</i>, began to flourish, particularly in the southeastern regions of São Paulo, Minas Gerais, and Rio de Janeiro. The crop quickly became a cornerstone of the Brazilian economy, fueled by the labor of enslaved Africans and later, European immigrants. As demand for coffee surged globally, Brazil’s production skyrocketed, and by the mid-1800s, the country had emerged as the world’s largest coffee producer.
+  <br>
+  <br>
+  Even today, with a streak of over 150 years, Brazil remains the top producer of coffee in the world. 
+  </p>
+  <a href="https://sagebrushcoffee.com/blogs/education/coffee-origins-brazil?srsltid=AfmBOopQ1QmVK7L2gYIoEqp6oFAeomDLNdEnjO1_MSPA0LSBaLoYNrgz">Source</a>
+</div>
+</div>
+          </main>
+          
+  <footer> 
+    <p>&copy; 2025 The Coffee Lair. All rights reserved. <i>By <strong>Bogdan Trigubov</strong></i></p>
+  </footer>
+  <button class="back-to-top1" title="Go to top">Top</button>
+  <script src="JavaScript/topbutton.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<!-- ScrollMagic -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+<script>
+  $(document).ready(function () {
+  
+    var controller = new ScrollMagic.Controller();
+
+    new ScrollMagic.Scene({
+      triggerElement: ".reality", 
+      duration: 300,  
+    })
+      .setTween(".legendary", { opacity: 0, y: -50, scale: 0.5}) 
+      .addTo(controller);
+
+    new ScrollMagic.Scene({
+      triggerElement: ".cure",
+      duration: 300,
+    })
+      .setTween(".reality", { opacity: 0, y: -50, scale: 0.5 })
+      .addTo(controller);
+
+    new ScrollMagic.Scene({
+      triggerElement: ".venice",
+      duration: 300,
+    })
+      .setTween(".cure", { opacity: 0, y: -50, scale: 0.5 })
+      .addTo(controller);
+
+      new ScrollMagic.Scene({
+      triggerElement: ".brazil",
+      duration: 300,
+    })
+      .setTween(".venice", { opacity: 0, y: -50, scale: 0.5 })
+      .addTo(controller);
+  });
+
+</script>
+<script>
+    $(document).ready(function() {
+    $(".legendary").slideDown(2000); 
+    });
+    $(document).ready(function() {
+    $(".reality").slideDown(2000); 
+    });
+    $(document).ready(function() {
+    $(".cure").slideDown(2000); 
+    });
+    $(document).ready(function() {
+    $(".venice").slideDown(2000); 
+    });
+    $(document).ready(function() {
+    $(".brazil").slideDown(2000); 
+    });
+</script>
+</body>
+</html>

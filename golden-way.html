@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="en">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("0NSJYK5U3mp5S7SeV"); // replace with your actual key
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Way - Art Zaryana Gallery</title>
+    <link rel="stylesheet" href="artwork-style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <div class="site-name">Art Zaryana</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle" />
+      <label for="hamburger-toggle" class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+    </nav>
+
+    <div class="off-screen-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <main>
+      <div class="artwork-hero">
+        <div class="image-container">
+          <button class="nav-arrow nav-arrow-left" id="prevImage">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <img
+            src="Artpieces/M3G_4009_1.jpg"
+            alt="Golden Way"
+            class="artwork-image"
+            id="mainImage"
+          />
+          <button class="nav-arrow nav-arrow-right" id="nextImage">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+          <div class="image-counter" id="imageCounter">1 / 1</div>
+        </div>
+        <div class="thumbnail-container" id="thumbnailContainer"></div>
+      </div>
+
+      <div class="artwork-details">
+        <div class="details-grid">
+          <div class="main-info">
+            <h1 class="artwork-title">Golden Way</h1>
+            <p class="artwork-price">$200</p>
+
+            <div class="description-section">
+              <h2>Description</h2>
+              <p>A journey through abstract consciousness and metaphysical exploration</p>
+            </div>
+
+            <div class="cta-buttons">
+              <button class="btn-primary" id="purchaseBtn">
+                Request Purchase
+              </button>
+              <button class="btn-secondary" id="contactBtn">Contact me</button>
+            </div>
+          </div>
+
+          <div class="specifications">
+            <h2>Specifications</h2>
+            <div class="spec-item">
+              <span class="spec-label">Medium:</span>
+              <span class="spec-value">Oil and stones on Canvas</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Dimensions:</span>
+              <span class="spec-value">18" × 24" (45cm × 60cm)</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Year:</span>
+              <span class="spec-value">2024</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Frame:</span>
+              <span class="spec-value">Available</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Availability:</span>
+              <span class="spec-value status-available">Available</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Request Purchase</h2>
+        <p class="modal-subtitle">
+          Complete the form below to initiate a secure purchase
+        </p>
+
+        <form id="purchaseForm">
+          <div class="form-section">
+            <h3>Personal Information</h3>
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                required
+                placeholder="John Doe"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="john@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                placeholder="+1 (555) 000-0000"
+              />
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Shipping Information</h3>
+            <div class="form-group">
+              <label for="address">Street Address *</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                required
+                placeholder="123 Main Street"
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City *</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  required
+                  placeholder="New York"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="state">State/Province *</label>
+                <input
+                  type="text"
+                  id="state"
+                  name="state"
+                  required
+                  placeholder="NY"
+                />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="zip">ZIP/Postal Code *</label>
+                <input
+                  type="text"
+                  id="zip"
+                  name="zip"
+                  required
+                  placeholder="10001"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="country">Country *</label>
+                <input
+                  type="text"
+                  id="country"
+                  name="country"
+                  required
+                  placeholder="United States"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Additional Information</h3>
+            <div class="form-group">
+              <label for="message">Message (Optional)</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Any special requests or questions..."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="payment-options">
+            <div class="payment-option">
+              <input
+                type="radio"
+                id="directContact"
+                name="paymentMethod"
+                value="contact"
+              />
+              <label for="directContact">
+                <span class="option-title">Direct Contact</span>
+                <span class="option-desc"
+                  >I will reach out back to you directly to arrange payment and
+                  delivery</span
+                >
+              </label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" id="cancelBtn">
+              Cancel
+            </button>
+            <button type="submit" class="btn-submit">Submit Request</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Contact me</h2>
+        <p class="modal-subtitle">
+          I'll be happy to respond to your questions or comments.
+        </p>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Name *</label>
+            <input
+              type="text"
+              id="contactName"
+              name="contactName"
+              required
+              placeholder="Your name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail">Email *</label>
+            <input
+              type="email"
+              id="contactEmail"
+              name="contactEmail"
+              required
+              placeholder="your@email.com"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Message *</label>
+            <textarea
+              id="contactMessage"
+              name="contactMessage"
+              rows="6"
+              required
+              placeholder="Ask about the artwork, shipping, or any other questions..."
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" id="contactCancelBtn">
+              Cancel
+            </button>
+            <button type="submit" class="btn-submit">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Art Zaryana. All rights reserved.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const offScreenMenu = document.querySelector(".off-screen-menu");
+        const hamMenuToggle = document.getElementById("hamburger-toggle");
+
+        hamMenuToggle.addEventListener("change", () => {
+          offScreenMenu.classList.toggle("active");
+        });
+
+        // Image gallery functionality
+        const images = [
+        "Artpieces/M3G_4009_1.jpg"
+];
+
+        let currentImageIndex = 0;
+        const mainImage = document.getElementById("mainImage");
+        const prevBtn = document.getElementById("prevImage");
+        const nextBtn = document.getElementById("nextImage");
+        const imageCounter = document.getElementById("imageCounter");
+        const thumbnailContainer =
+          document.getElementById("thumbnailContainer");
+
+        function updateGallery() {
+          mainImage.src = images[currentImageIndex];
+          imageCounter.textContent = `${currentImageIndex + 1} / ${images.length}`;
+
+          document.querySelectorAll(".thumbnail").forEach((thumb, index) => {
+            thumb.classList.toggle("active", index === currentImageIndex);
+          });
+
+          if (images.length <= 1) {
+            prevBtn.style.display = "none";
+            nextBtn.style.display = "none";
+            imageCounter.style.display = "none";
+          }
+        }
+
+        function createThumbnails() {
+          if (images.length <= 1) {
+            thumbnailContainer.style.display = "none";
+            return;
+          }
+
+          images.forEach((src, index) => {
+            const thumb = document.createElement("div");
+            thumb.className = "thumbnail";
+            if (index === 0) thumb.classList.add("active");
+
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = `View ${index + 1}`;
+
+            thumb.appendChild(img);
+            thumb.addEventListener("click", () => {
+              currentImageIndex = index;
+              updateGallery();
+            });
+
+            thumbnailContainer.appendChild(thumb);
+          });
+        }
+
+        function showNextImage() {
+          currentImageIndex = (currentImageIndex + 1) % images.length;
+          updateGallery();
+        }
+
+        function showPrevImage() {
+          currentImageIndex =
+            (currentImageIndex - 1 + images.length) % images.length;
+          updateGallery();
+        }
+
+        nextBtn.addEventListener("click", showNextImage);
+        prevBtn.addEventListener("click", showPrevImage);
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") {
+            showNextImage();
+          } else if (e.key === "ArrowLeft") {
+            showPrevImage();
+          }
+        });
+
+        createThumbnails();
+        updateGallery();
+
+        // Modal functionality
+        const purchaseModal = document.getElementById("purchaseModal");
+        const contactModal = document.getElementById("contactModal");
+        const purchaseBtn = document.getElementById("purchaseBtn");
+        const contactBtn = document.getElementById("contactBtn");
+        const cancelBtn = document.getElementById("cancelBtn");
+        const contactCancelBtn = document.getElementById("contactCancelBtn");
+        const closeBtns = document.getElementsByClassName("close");
+
+        purchaseBtn.onclick = () => {
+          purchaseModal.style.display = "block";
+          document.body.style.overflow = "hidden";
+        };
+
+        contactBtn.onclick = () => {
+          contactModal.style.display = "block";
+          document.body.style.overflow = "hidden";
+        };
+
+        cancelBtn.onclick = () => {
+          purchaseModal.style.display = "none";
+          document.body.style.overflow = "auto";
+        };
+
+        contactCancelBtn.onclick = () => {
+          contactModal.style.display = "none";
+          document.body.style.overflow = "auto";
+        };
+
+        Array.from(closeBtns).forEach((btn) => {
+          btn.onclick = function () {
+            purchaseModal.style.display = "none";
+            contactModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          };
+        });
+
+        window.onclick = (event) => {
+          if (event.target == purchaseModal) {
+            purchaseModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+          if (event.target == contactModal) {
+            contactModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        };
+
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent normal form submission
+
+            emailjs
+              .sendForm(
+                "service_c40osld", // from EmailJS dashboard
+                "template_v2deo3f", // from EmailJS template
+                this, // the form element
+              )
+              .then(
+                function () {
+                  alert("Message sent! I respond soon.");
+                },
+                function (error) {
+                  console.error("FAILED...", error);
+                  alert("Oops, something went wrong. Try again later.");
+                },
+              );
+          });
+        document
+          .getElementById("purchaseForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault(); // prevent normal form submission
+
+            emailjs
+              .sendForm(
+                "service_c40osld", // from EmailJS dashboard
+                "template_9ptxv7o", // from EmailJS template
+                this, // the form element
+              )
+              .then(
+                function () {
+                  alert("Message sent! I will respond soon.");
+                },
+                function (error) {
+                  console.error("FAILED...", error);
+                  alert("Oops, something went wrong. Try again later.");
+                },
+              );
+          });
+      });
+    </script>
+  </body>
+</html>
