@@ -43,7 +43,7 @@ function getArtworkHTMLTemplate(data) {
 <html lang="en">
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    emailjs.init("0NSJYK5U3mp5S7SeV"); // replace with your actual key
+    emailjs.init("0NSJYK5U3mp5S7SeV"); //
   </script>
   <head>
     <meta charset="UTF-8" />
